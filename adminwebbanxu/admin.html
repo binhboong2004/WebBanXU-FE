@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị Hệ Thống - BinhXuTuDong</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin_style.css">
+</head>
+<body>
+
+<div class="admin-container">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo.png" alt="Logo" class="admin-logo">
+        </div>
+        <nav class="sidebar-nav">
+            <a href="admin.html" class="nav-link active"><i class="fas fa-home"></i> Thống kê</a>
+            
+            <div class="nav-group">QUẢN LÝ</div>
+            
+            <div class="dropdown-item">
+                <div class="nav-link d-flex justify-content-between align-items-center toggle-next">
+                    <span><i class="fas fa-users"></i> Người dùng</span>
+                    <i class="fas fa-chevron-down small"></i>
+                </div>
+                <div class="sub-menu">
+                    <a href="user_list.html"><i class="fas fa-list-ul me-2"></i> Danh sách</a>
+                </div>
+            </div>
+
+            <div class="dropdown-item">
+                <div class="nav-link d-flex justify-content-between align-items-center toggle-next">
+                    <span><i class="fas fa-th-large"></i> Danh mục</span>
+                    <i class="fas fa-chevron-down small"></i>
+                </div>
+                <div class="sub-menu">
+                    <a href="category_list.html"><i class="fas fa-list-ul me-2"></i> Danh sách</a>
+                    <a href="add_category.html"><i class="fas fa-plus-circle me-2"></i> Thêm mới</a>
+                </div>
+            </div>
+
+            <div class="dropdown-item">
+                <div class="nav-link d-flex justify-content-between align-items-center toggle-next">
+                    <span><i class="fas fa-box"></i> Sản phẩm</span>
+                    <i class="fas fa-chevron-down small"></i>
+                </div>
+                <div class="sub-menu">
+                    <a href="product_list.html"><i class="fas fa-list-ul me-2"></i> Danh sách</a>
+                    <a href="add_product.html"><i class="fas fa-plus-circle me-2"></i> Thêm mới</a>
+                </div>
+            </div>
+
+            <a href="orders.html" class="nav-link"><i class="fas fa-shopping-bag"></i> Đơn hàng</a>
+
+            <div class="nav-group">TÀI CHÍNH</div>
+            <a href="cashflow.html" class="nav-link"><i class="fas fa-exchange-alt"></i> Dòng tiền</a>
+            
+            <a href="index.html" class="nav-link text-danger mt-4"><i class="fas fa-sign-out-alt"></i> Quay lại Web</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Tìm kiếm...">
+            </div>
+            <div class="header-right">
+                <div class="user-pill">
+                    <img src="img/avt.jpg" alt="Admin">
+                    <span class="fw-bold small d-none d-md-inline">Admin Bình</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-body">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="icon-wrap bg-blue-soft text-primary"><i class="fas fa-shopping-cart"></i></div>
+                        <div><p>Đơn hàng</p><h4>8</h4></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="icon-wrap bg-purple-soft text-purple"><i class="fas fa-user"></i></div>
+                        <div><p>Người dùng</p><h4>4</h4></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card">
+                        <div class="icon-wrap bg-cyan-soft text-cyan"><i class="fas fa-database"></i></div>
+                        <div><p>Sản phẩm</p><h4>12</h4></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h6 class="fw-bold m-0">BIỂU ĐỒ TĂNG TRƯỞNG</h6>
+                            <div class="chart-options text-muted">
+                                <i class="fas fa-sync-alt me-3 cursor-pointer"></i>
+                                <i class="fas fa-ellipsis-v cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <div style="height: 350px;"><canvas id="mainChart"></canvas></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card h-100">
+                        <h6 class="fw-bold mb-4 border-bottom pb-3">DÒNG TIỀN GẦN ĐÂY</h6>
+                        <div class="cash-flow-list">
+                            <div class="cash-item d-flex align-items-center mb-4">
+                                <div class="item-icon in me-3"><i class="fas fa-plus"></i></div>
+                                <div class="flex-grow-1">
+                                    <span class="d-block fw-bold small">Nạp tiền MOMO</span>
+                                    <span class="text-muted smallest">Khách: boy2kzz • 2 phút trước</span>
+                                </div>
+                                <span class="text-success fw-bold">+500.000đ</span>
+                            </div>
+                            <div class="cash-item d-flex align-items-center mb-4">
+                                <div class="item-icon out me-3"><i class="fas fa-minus"></i></div>
+                                <div class="flex-grow-1">
+                                    <span class="d-block fw-bold small">Mua tài khoản TDS</span>
+                                    <span class="text-muted smallest">Tự động • 15 phút trước</span>
+                                </div>
+                                <span class="text-danger fw-bold">-50.000đ</span>
+                            </div>
+                            </div>
+                        <div class="text-center mt-auto">
+                            <a href="#" class="text-primary small text-decoration-none fw-bold">Xem tất cả giao dịch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/admin_script.js"></script>
+</body>
+</html>

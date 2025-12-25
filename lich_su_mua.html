@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch Sử Mua Hàng - XUTUDONG.COM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo" class="img-fluid">
+        </div>
+        <nav class="nav flex-column">
+            <a href="index.html" class="nav-link"><i class="fas fa-home me-2"></i> Trang Chủ</a>
+            <a href="mua_tai_khoan.html" class="nav-link"><i class="fas fa-shopping-cart me-2"></i> Mua Tài Khoản</a>
+            <a href="lich_su_mua.html" class="nav-link active"><i class="fas fa-history me-2"></i> Lịch Sử Mua Hàng</a>
+            <div class="menu-title">Nạp Tiền</div>
+            <a href="nap_ngan_hang.html" class="nav-link"><i class="fas fa-university me-2"></i> Ngân Hàng</a>
+            <a href="nap_the_cao.html" class="nav-link"><i class="fas fa-credit-card me-2"></i> Nạp Thẻ Cào</a>
+
+            <div class="menu-title">Khác</div>
+            <a href="#" class="nav-link"><i class="fas fa-book me-2"></i> Liên Hệ</a>
+            <a href="login.html" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i> Đăng Xuất</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-navbar">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-sm btn-light border me-3"><i class="fas fa-wallet text-primary"></i> Ví: 0đ</button>
+            </div>
+            
+            <div class="user-info d-flex align-items-center dropdown">
+                <div class="d-flex align-items-center cursor-pointer" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/avt.jpg" class="rounded-circle me-2" style="width: 30px; height:30px; object-fit: cover;">
+                    <strong class="me-1">boy2kzz</strong>
+                    <i class="fas fa-caret-down small"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-3">
+                    <li><a class="dropdown-item py-2" href="profile.html"><i class="fas fa-user-circle me-2"></i> Trang cá nhân</a></li>
+                    <li><a class="dropdown-item py-2" href="change_password.html"><i class="fas fa-key me-2"></i> Thay đổi mật khẩu</a></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="login.html"><i class="fas fa-sign-out-alt me-2"></i> Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h5 class="fw-bold mb-3">LỊCH SỬ MUA HÀNG</h5>
+            
+            <div class="table-responsive bg-white rounded shadow-sm p-3">
+                <table class="table table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Mã đơn</th>
+                            <th>Sản phẩm</th>
+                            <th>Thanh toán</th>
+                            <th>Thời gian</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="badge bg-secondary">#ORD1001</span></td>
+                            <td>Tài Khoản TDS 1M xu</td>
+                            <td class="text-danger fw-bold">50.000đ</td>
+                            <td>2025-12-24 15:00</td>
+                            <td>
+                                <button class="btn btn-sm btn-info text-white fw-bold" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#modalXemAcc"
+                                        onclick="showAccount('tk_traodoisub_01', 'pass123456')">
+                                    <i class="fas fa-eye me-1"></i> XEM ACC
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalXemAcc" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="modalLabel"><i class="fas fa-key me-2"></i>THÔNG TIN TÀI KHOẢN</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label small text-muted fw-bold">ĐỊNH DẠNG: USERNAME | PASSWORD</label>
+                        <div class="input-group">
+                            <input type="text" id="accContent" class="form-control fw-bold text-danger bg-light" value="" readonly>
+                            <button class="btn btn-dark" type="button" onclick="copyToClipboard()">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning py-2 mb-0 small">
+                        <i class="fas fa-exclamation-triangle me-1"></i> 
+                        <strong>Lưu ý:</strong> Hãy đổi mật khẩu ngay sau khi nhận tài khoản để tránh mất mát dữ liệu!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">ĐÓNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

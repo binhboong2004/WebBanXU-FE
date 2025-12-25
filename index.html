@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>XUTUDONG.COM - Hệ Thống Bán Xu Tự Động</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo" class="img-fluid">
+        </div>
+        <nav class="nav flex-column">
+            <a href="index.html" class="nav-link active"><i class="fas fa-home me-2"></i> Trang Chủ</a>
+            <a href="mua_tai_khoan.html" class="nav-link"><i class="fas fa-shopping-cart me-2"></i> Mua Tài Khoản</a>
+            <a href="lich_su_mua.html" class="nav-link"><i class="fas fa-history me-2"></i> Lịch Sử Mua Hàng</a>
+            
+            <div class="menu-title">Nạp Tiền</div>
+            <a href="nap_ngan_hang.html" class="nav-link"><i class="fas fa-university me-2"></i> Ngân Hàng</a>
+            <a href="nap_the_cao.html" class="nav-link"><i class="fas fa-credit-card me-2"></i> Nạp Thẻ Cào</a>
+            
+            <div class="menu-title">Khác</div>
+            <a href="#" class="nav-link"><i class="fas fa-book me-2"></i> Liên Hệ</a>
+            <a href="login.html" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i> Đăng Xuất</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-navbar">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-sm btn-light border me-3"><i class="fas fa-wallet text-primary"></i> Ví: 0đ</button>
+            </div>
+            
+            <div class="user-info d-flex align-items-center dropdown">
+                <div class="d-flex align-items-center cursor-pointer" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/avt.jpg" class="rounded-circle me-2" style="width: 30px; height:30px; object-fit: cover;">
+                    <strong class="me-1">boy2kzz</strong>
+                    <i class="fas fa-caret-down small"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-3">
+                    <li><a class="dropdown-item py-2" href="profile.html"><i class="fas fa-user-circle me-2"></i> Trang cá nhân</a></li>
+                    <li><a class="dropdown-item py-2" href="change_password.html"><i class="fas fa-key me-2"></i> Thay đổi mật khẩu</a></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="login.html"><i class="fas fa-sign-out-alt me-2"></i> Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-8 border-end">
+                            <h4 class="fw-bold text-primary mb-3">WEBSITE BÁN XU TỰ ĐỘNG <span class="badge bg-primary fs-6">V1.0</span></h4>
+                            <p class="text-muted">Hệ thống cung cấp tài khoản <b>Traodoisub</b> và <b>Tuongtaccheo</b> tự động. An toàn - Bảo mật - Uy tín.</p>
+                        </div>
+                        <div class="col-md-4 ps-4">
+                            <h6 class="fw-bold"><i class="fas fa-headset text-danger me-2"></i>Hỗ trợ trực tuyến</h6>
+                            <p class="small text-muted mb-1">Zalo: <strong>0889639655</strong></p>
+                            <button class="btn btn-sm btn-outline-primary w-100">Tham gia Box Zalo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="fw-bold mt-4 mb-3 text-uppercase">Tài khoản nổi bật</h5>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <div class="card-header bg-dark text-white text-center py-3 fw-bold">TRAODOISUB</div>
+                        <div class="card-body text-center">
+                            <h2 class="text-primary fw-bold mb-0">1.000.000</h2>
+                            <p class="text-muted small">XU TRONG TÀI KHOẢN</p>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted small">Giá:</span>
+                                <span class="fw-bold text-danger">50.000đ</span>
+                            </div>
+                            <button class="btn btn-warning w-100 fw-bold py-2 shadow-sm" onclick="openBuyModal('Tài Khoản Trao Đổi Sub 1M xu', '50.000')">
+                                <i class="fas fa-shopping-cart me-1"></i> MUA NGAY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmBuyModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-warning py-3">
+                    <h5 class="modal-title fw-bold text-uppercase"><i class="fas fa-check-circle me-2"></i>Xác nhận đơn hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <p class="text-muted mb-1 small text-uppercase">Bạn đang thực hiện mua sản phẩm:</p>
+                    <h5 id="modalProdName" class="fw-bold text-primary mb-4">Tên sản phẩm</h5>
+                    <div class="bg-light p-3 rounded-3 border mb-3 text-start">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Đơn giá:</span>
+                            <strong id="modalProdPrice" class="text-danger">0đ</strong>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Thanh toán:</span>
+                            <strong class="text-dark">Ví tài khoản</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 p-3">
+                    <button type="button" class="btn btn-light fw-bold px-4" data-bs-dismiss="modal">HỦY</button>
+                    <button type="button" class="btn btn-warning fw-bold px-4 shadow-sm" onclick="submitPurchase()">XÁC NHẬN MUA</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

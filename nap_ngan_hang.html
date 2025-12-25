@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Nạp Ngân Hàng - XUTUDONG.COM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo" class="img-fluid">
+        </div>
+        <nav class="nav flex-column">
+            <a href="index.html" class="nav-link"><i class="fas fa-home me-2"></i> Trang Chủ</a>
+            <a href="mua_tai_khoan.html" class="nav-link"><i class="fas fa-shopping-cart me-2"></i> Mua Tài Khoản</a>
+            <a href="lich_su_mua.html" class="nav-link"><i class="fas fa-history me-2"></i> Lịch Sử Mua Hàng</a>
+            <div class="menu-title">Nạp Tiền</div>
+            <a href="nap_ngan_hang.html" class="nav-link active"><i class="fas fa-university me-2"></i> Ngân Hàng</a>
+            <a href="nap_the_cao.html" class="nav-link"><i class="fas fa-credit-card me-2"></i> Nạp Thẻ Cào</a>
+            
+            <div class="menu-title">Khác</div>
+            <a href="#" class="nav-link"><i class="fas fa-book me-2"></i> Liên Hệ</a>
+            <a href="login.html" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i> Đăng Xuất</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-navbar">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-sm btn-light border me-3"><i class="fas fa-wallet text-primary"></i> Ví: 0đ</button>
+            </div>
+            
+            <div class="user-info d-flex align-items-center dropdown">
+                <div class="d-flex align-items-center cursor-pointer" id="userMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/avt.jpg" class="rounded-circle me-2" style="width: 30px; height:30px; object-fit: cover;">
+                    <strong class="me-1">boy2kzz</strong>
+                    <i class="fas fa-caret-down small"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-3">
+                    <li><a class="dropdown-item py-2" href="profile.html"><i class="fas fa-user-circle me-2"></i> Trang cá nhân</a></li>
+                    <li><a class="dropdown-item py-2" href="change_password.html"><i class="fas fa-key me-2"></i> Thay đổi mật khẩu</a></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="login.html"><i class="fas fa-sign-out-alt me-2"></i> Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h5 class="fw-bold mb-3">NẠP TIỀN QUA NGÂN HÀNG / MOMO</h5>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm text-center p-4">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=MBBank|123456789|NAPTIEN boy2kzz" class="mx-auto mb-3" style="width: 180px;">
+                        <h6 class="fw-bold text-uppercase">MB BANK (TỰ ĐỘNG)</h6>
+                        <p class="mb-1">Số tài khoản: <strong class="text-primary">123456789</strong></p>
+                        <p class="mb-1">Chủ tài khoản: <strong>VŨ DUY BÌNH</strong></p>
+                        <div class="alert alert-danger mt-3 py-2">
+                            Nội dung: <strong>NAPTIEN boy2kzz</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-0 shadow-sm h-100 p-4">
+                        <h6 class="fw-bold"><i class="fas fa-info-circle text-warning me-2"></i> HƯỚNG DẪN NẠP TIỀN</h6>
+                        <ul class="small text-muted mt-3">
+                            <li class="mb-2">Bạn cần chuyển khoản chính xác <strong>Nội dung</strong> phía bên trái để được cộng tiền tự động.</li>
+                            <li class="mb-2">Hệ thống xử lý giao dịch tự động từ 1 - 3 phút.</li>
+                            <li class="mb-2">Nếu sau 15 phút chưa nhận được tiền, vui lòng liên hệ Admin qua Zalo: 0889639655.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

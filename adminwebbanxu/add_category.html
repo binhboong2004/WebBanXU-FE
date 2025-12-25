@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Danh Mục Mới - Admin BinhXu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="css/user_list.css">
+    <style>
+        .preview-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .preview-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-box i {
+            font-size: 40px;
+            color: #4361ee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="img/logo.png" alt="Logo" class="admin-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin.html" class="nav-link"><i class="fas fa-home"></i> Thống kê</a>
+                <div class="nav-group">QUẢN LÝ</div>
+                <div class="dropdown-item">
+                    <div class="nav-link d-flex justify-content-between align-items-center toggle-next">
+                        <span><i class="fas fa-users"></i> Người dùng</span>
+                        <i class="fas fa-chevron-down small"></i>
+                    </div>
+                    <div class="sub-menu">
+                        <a href="user_list.html"><i class="fas fa-list-ul me-2"></i> Danh sách</a>
+                    </div>
+                </div>
+                <div class="dropdown-item open">
+                    <div class="nav-link d-flex justify-content-between align-items-center toggle-next active">
+                        <span><i class="fas fa-th-large"></i> Danh mục</span>
+                        <i class="fas fa-chevron-down small"></i>
+                    </div>
+                    <div class="sub-menu">
+                        <a href="category_list.html"><i class="fas fa-list-ul me-2"></i> Danh sách</a>
+                        <a href="add_category.html" class="active-sub"><i class="fas fa-plus-circle me-2"></i> Thêm
+                            mới</a>
+                    </div>
+                </div>
+                <div class="dropdown-item">
+                    <div class="nav-link d-flex justify-content-between align-items-center toggle-next">
+                        <span><i class="fas fa-box"></i> Sản phẩm</span>
+                        <i class="fas fa-chevron-down small"></i>
+                    </div>
+                    <div class="sub-menu">
+                        <a href="product_list.html"><i class="fas fa-list-ul me-2"></i> Danh sách</a>
+                        <a href="add_product.html"><i class="fas fa-plus-circle me-2"></i> Thêm mới</a>
+                    </div>
+                </div>
+
+                <a href="orders.html" class="nav-link"><i class="fas fa-shopping-bag"></i> Đơn hàng</a>
+                <div class="nav-group">TÀI CHÍNH</div>
+                <a href="cashflow.html" class="nav-link"><i class="fas fa-exchange-alt"></i> Dòng tiền</a>
+                <a href="index.html" class="nav-link text-danger mt-4"><i class="fas fa-sign-out-alt"></i> Quay lại
+                    Web</a>
+
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h5 class="fw-bold mb-0">Thêm Danh Mục</h5>
+                </div>
+                <div class="header-right">
+                    <div class="user-pill">
+                        <img src="img/avt.jpg" alt="Admin">
+                        <span class="fw-bold small">Admin Bình</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="user-card text-start" style="padding: 35px;">
+                            <form id="addCategoryForm">
+                                <div class="text-center mb-4">
+                                    <div class="preview-box mb-2" id="previewContainer">
+                                        <i id="iconShow" class="fas fa-folder-plus"></i>
+                                        <img id="imageShow" src="" class="d-none">
+                                    </div>
+                                    <span class="small text-muted fw-bold">XEM TRƯỚC HIỂN THỊ</span>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small">TÊN DANH MỤC</label>
+                                    <input type="text" class="form-control rounded-pill px-4" id="catTitle"
+                                        placeholder="Nhập tên danh mục (VD: Xu Trao Đổi Sub)" required>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small">ICON (FONTAWESOME)</label>
+                                        <input type="text" class="form-control rounded-pill px-4" id="catIcon"
+                                            placeholder="fas fa-coins">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-bold small">HOẶC TẢI ẢNH</label>
+                                        <input type="file" class="form-control rounded-pill" id="catFile"
+                                            accept="image/*">
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small">TRẠNG THÁI</label>
+                                    <select class="form-select rounded-pill px-4" id="catStatus">
+                                        <option value="true">Đang hoạt động</option>
+                                        <option value="false">Đang bảo trì</option>
+                                    </select>
+                                </div>
+
+                                <div class="d-flex gap-2 justify-content-end mt-5">
+                                    <a href="category_list.html" class="btn btn-light rounded-pill px-4 fw-bold">Hủy
+                                        bỏ</a>
+                                    <button type="submit" class="btn btn-primary rounded-pill px-5 fw-bold">Lưu danh
+                                        mục</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/add_category.js"></script>
+</body>
+
+</html>

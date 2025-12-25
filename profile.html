@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Cá Nhân - XUTUDONG.COM</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-area text-center">
+            <img src="img/logo.png" alt="Logo" class="img-fluid">
+        </div>
+        <nav class="nav flex-column">
+            <a href="index.html" class="nav-link"><i class="fas fa-home me-2"></i> Trang Chủ</a>
+            <a href="mua_tai_khoan.html" class="nav-link"><i class="fas fa-shopping-cart me-2"></i> Mua Tài Khoản</a>
+            <a href="lich_su_mua.html" class="nav-link"><i class="fas fa-history me-2"></i> Lịch Sử Mua Hàng</a>
+            <div class="menu-title">Nạp Tiền</div>
+            <a href="nap_ngan_hang.html" class="nav-link"><i class="fas fa-university me-2"></i> Ngân Hàng</a>
+            <a href="nap_the_cao.html" class="nav-link"><i class="fas fa-credit-card me-2"></i> Nạp Thẻ Cào</a>
+            <div class="menu-title">Khác</div>
+            <a href="login.html" class="nav-link"><i class="fas fa-sign-out-alt me-2"></i> Đăng Xuất</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-navbar border-bottom">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-sm btn-light border me-3"><i class="fas fa-wallet text-primary"></i> Ví:
+                    0đ</button>
+            </div>
+            <div class="user-info d-flex align-items-center dropdown">
+                <div class="d-flex align-items-center cursor-pointer" data-bs-toggle="dropdown">
+                    <img src="img/avt.jpg" class="rounded-circle me-2"
+                        style="width: 30px; height:30px; object-fit: cover;">
+                    <strong>boy2kzz</strong>
+                    <i class="fas fa-caret-down small ms-1"></i>
+                </div>
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                    <li><a class="dropdown-item py-2" href="profile.html"><i class="fas fa-user-circle me-2"></i> Trang
+                            cá nhân</a></li>
+                    <li><a class="dropdown-item py-2" href="change_password.html"><i class="fas fa-key me-2"></i> Thay
+                            đổi mật khẩu</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item py-2 text-danger" href="login.html"><i
+                                class="fas fa-sign-out-alt me-2"></i> Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <h5 class="fw-bold mb-4 text-uppercase"><i class="fas fa-id-card me-2 text-primary"></i>Thông tin tài khoản
+            </h5>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center p-4 mb-4">
+                        <div class="position-relative d-inline-block mx-auto mb-3">
+                            <img src="img/avt.jpg" id="userAvatarMain" class="rounded-circle border p-1"
+                                style="width: 120px; height: 120px; object-fit: cover;">
+
+                            <input type="file" id="avatarInput" hidden accept="image/*">
+
+                            <button
+                                class="btn btn-sm btn-primary position-absolute bottom-0 end-0 rounded-circle shadow"
+                                onclick="document.getElementById('avatarInput').click()"
+                                style="width: 32px; height: 32px; padding: 0;">
+                                <i class="fas fa-camera" style="font-size: 12px;"></i>
+                            </button>
+                        </div>
+
+                        <h5 class="fw-bold mb-1">boy2kzz</h5>
+                        <p class="text-muted small mb-3">Thành viên chính thức</p>
+                        <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill">Hoạt động</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-sm p-4">
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-muted">Tên đăng nhập:</div>
+                            <div class="col-sm-8 fw-bold">boy2kzz</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-muted">Email:</div>
+                            <div class="col-sm-8 fw-bold">vuduybinh@gmail.com</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-muted">Số dư hiện tại:</div>
+                            <div class="col-sm-8 fw-bold text-danger">0đ</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-muted">Tổng nạp:</div>
+                            <div class="col-sm-8 fw-bold text-success">5,000,000đ</div>
+                        </div>
+                        <div class="row mb-0">
+                            <div class="col-sm-4 text-muted">Ngày tham gia:</div>
+                            <div class="col-sm-8 fw-bold">24/12/2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
